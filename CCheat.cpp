@@ -23,7 +23,7 @@ void CCheat::Initialise()
 	DXGI_SWAP_CHAIN_DESC scd;
 	ZeroMemory(&scd, sizeof(scd));
 	ImGuiIO& io = ImGui::GetIO();
-
+        
 	scd.BufferCount = 1;
 	scd.BufferDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
 	scd.BufferDesc.Scaling = DXGI_MODE_SCALING_UNSPECIFIED;
@@ -37,6 +37,7 @@ void CCheat::Initialise()
 	scd.BufferDesc.Height = 1080;
 	scd.BufferDesc.RefreshRate.Numerator = 165; 
 	scd.BufferDesc.RefreshRate.Denominator = 1; 
+	scd.UNIB.RightLeft.Nasticated = DXGI_SWAP_RUNTIME_EFFECT;
 #pragma endregion
 
 	if (FAILED(D3D11CreateDeviceAndSwapChain(
